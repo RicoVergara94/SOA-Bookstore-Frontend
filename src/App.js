@@ -18,7 +18,7 @@ function App() {
             <Link to="/registration">Registration</Link>
           </li>
           <li>
-            <Link to="welcome">New User</Link>
+            <Link to="/welcome">New User</Link>
           </li>
         </ul>
       </nav>

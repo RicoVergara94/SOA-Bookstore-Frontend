@@ -1,8 +1,9 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { unstable_History } from "react-router-dom";
 
 export default function Registration() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
   return (
     <>
       <header>Please enter the following information</header>
@@ -15,10 +16,12 @@ export default function Registration() {
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify(data),
             })
-              .then((res) =>
-                console.log("this is the status code: " + res.status)
-              )
-              .catch((e) => console.log(e));
+              .then((res) => {
+                console.log("this is the status code: " + res.status);
+              })
+              .catch((e) => {
+                console.log(e);
+              });
           })}
         >
           <input
